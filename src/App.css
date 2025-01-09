@@ -1,8 +1,15 @@
 #root {
   width: 100%;
+  height: 100vh;
   text-align: center;
   padding-left: 2rem;
   padding-right: 2rem;
+}
+
+a {
+  text-decoration: none !important;
+  color: inherit !important;
+  font-weight: normal !important;
 }
 
 .logo {
