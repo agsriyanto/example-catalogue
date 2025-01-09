@@ -1,0 +1,43 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1.2rem;
+  padding-top: 1rem;
+  border-bottom: 1px solid #E6E6E6;
+  align-items: center;
+
+  .logo {
+    width: 145px;
+    height: 41px;
+    padding: 0;
+  }
+
+  .navbar-content {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 14px;
+
+    .navbar-title-home {
+      padding: 4px 16px;
+      border: 1px solid #F58220;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .navbar-title-user {
+      .title-name {
+        font-size: 16px;
+        font-weight: 600;
+        margin: 0;
+      }
+
+      .title-role {
+        font-size: 12px;
+        font-weight: 400;
+        color: #617170;
+        margin: 0;
+      }
+    }
+  }
+}

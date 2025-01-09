@@ -1,0 +1,17 @@
+.menu {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  margin: 1rem 0;
+
+  h4 {
+    font-weight: 400;
+    margin: 0;
+    cursor: pointer;
+  }
+
+  .active {
+    color: #F58220;
+    font-weight: 500;
+  }
+}
