@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Table, Button, Select, Tag, Input } from "antd";
+const { Option } = Select;
 
 import "./request.scss";
 
@@ -49,8 +50,6 @@ const Request = () => {
       key: "action",
       render: (_: any, record: DataType) => (
         <div className="action-buttons">
-          <Button type="link" icon={<i className="fa fa-eye"></i>} />
-          <Button type="link" icon={<i className="fa fa-trash"></i>} />
           {record.status === "Approved" && (
             <Button type="primary">Send to Vendor</Button>
           )}
