@@ -23,10 +23,6 @@ const ItPeriperal = () => {
     setSearchQuery(event.target.value);
   };
 
-  const handleSortChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setSortOption(event.target.value);
-  };
-
   const sortProducts = (products: Product[]) => {
     switch (sortOption) {
       case 'Low Price':
@@ -34,9 +30,9 @@ const ItPeriperal = () => {
       case 'High Price':
         return products.sort((a, b) => b.price - a.price);
       case 'Latest':
-        return products.sort((a, b) => new Date(b.date) - new Date(a.date));
+        return products.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
       case 'Oldest':
-        return products.sort((a, b) => new Date(a.date) - new Date(b.date));
+        return products.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
       default:
         return products;
     }
