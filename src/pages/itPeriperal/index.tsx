@@ -5,19 +5,23 @@ import { IconSearch } from '@tabler/icons-react'
 import './itPeriperal.scss';
 import CardContent from '../../components/cardContent';
 import Dropdown from "../../components/dropdown";
-import products from "../../assets/data/products.json";
+import productsData from "../../assets/data/products.json";
 
 interface Product {
   id: number;
   name: string;
-  vendor: string;
+  category: string;
   price: number;
-  date: string;
+  image: string;
+  vendor: string;
+  date?: string;
 }
 
 const ItPeriperal = () => {
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [sortOption, setSortOption] = useState<string>('Low Price');
+
+  const products: Product[] = productsData as Product[];
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(event.target.value);
@@ -30,9 +34,15 @@ const ItPeriperal = () => {
       case 'High Price':
         return products.sort((a, b) => b.price - a.price);
       case 'Latest':
-        return products.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+        return products.sort(
+          (a, b) =>
+            new Date(b.date || 0).getTime() - new Date(a.date || 0).getTime()
+        );
       case 'Oldest':
-        return products.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+        return products.sort(
+          (a, b) =>
+            new Date(a.date || 0).getTime() - new Date(b.date || 0).getTime()
+        );
       default:
         return products;
     }
