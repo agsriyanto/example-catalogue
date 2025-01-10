@@ -1,20 +1,22 @@
 import { IconTrash } from "@tabler/icons-react";
 import "./sidebar.scss";
 
-interface SidebarProps {
-  isOpen: boolean;
-  setIsOpen: (isOpen: boolean) => void;
-  cartItems: CartItem[];
-  setCartItems: (items: CartItem[]) => void;
-  isModalVisible: boolean;
-  setIsModalVisible: (isVisible: boolean) => void;
-}
-
 interface CartItem {
   id: number;
   name: string;
-  quantity: number;
   price: number;
+  vendor: string;
+  quantity: number;
+  image: string;
+}
+
+interface SidebarProps {
+  isOpen: boolean;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  cartItems: CartItem[];
+  setCartItems: React.Dispatch<React.SetStateAction<CartItem[]>>;
+  isModalVisible: boolean;
+  setIsModalVisible: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const Sidebar = (props: SidebarProps) => {

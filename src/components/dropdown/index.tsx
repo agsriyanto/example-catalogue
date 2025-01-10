@@ -8,7 +8,7 @@ const Dropdown = (props: any) => {
   const [visible, setVisible] = useState<boolean>(false);
   const [tempSelected, setTempSelected] = useState<string>("");
 
-  const dropdownRef = useRef(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   const toggleDropdown = () => {
     setVisible(!visible);
