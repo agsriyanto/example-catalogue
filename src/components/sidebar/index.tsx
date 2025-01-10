@@ -1,23 +1,37 @@
-import React, { useState } from "react";
-
 import { IconTrash } from "@tabler/icons-react";
 import "./sidebar.scss";
 
-const Sidebar = (props: any) => {
+interface SidebarProps {
+  isOpen: boolean;
+  setIsOpen: (isOpen: boolean) => void;
+  cartItems: CartItem[];
+  setCartItems: (items: CartItem[]) => void;
+  isModalVisible: boolean;
+  setIsModalVisible: (isVisible: boolean) => void;
+}
+
+interface CartItem {
+  id: number;
+  name: string;
+  quantity: number;
+  price: number;
+}
+
+const Sidebar = (props: SidebarProps) => {
   const { isOpen, setIsOpen, cartItems, setCartItems, isModalVisible, setIsModalVisible } = props;
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
     if (!isOpen) {
-      document.body.style.overflow = "hidden"; // Disable scrolling
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "auto"; // Enable scrolling
+      document.body.style.overflow = "auto";
     }
   };
 
-  const handleQuantityChange = (id, change) => {
-    setCartItems((prevItems) =>
-      prevItems.map((item) =>
+  const handleQuantityChange = (id: number, change: number) => {
+    setCartItems((prevItems: CartItem[]) =>
+      prevItems.map((item: CartItem) =>
         item.id === id
           ? { ...item, quantity: Math.max(item.quantity + change, 1) }
           : item
@@ -25,10 +39,9 @@ const Sidebar = (props: any) => {
     );
   };
 
-  const totalPrice = cartItems?.reduce(
-    (total, item) => total + item.price * item.quantity,
-    0
-  );
+  const calculateTotal = () => {
+    return cartItems.reduce((total: number, item: CartItem) => total + item.price * item.quantity, 0);
+  };
 
   return (
     <>
@@ -88,7 +101,7 @@ const Sidebar = (props: any) => {
             </div>
             <div className="cart-footer">
               <p className="cart-footer-selected">{cartItems.length} Product selected</p>
-              <p>Total: IDR {totalPrice.toLocaleString()}</p>
+              <p>Total: IDR {calculateTotal()}</p>
               <button className="next-button" onClick={() => setIsModalVisible(!isModalVisible)}>Next</button>
             </div>
           </div>

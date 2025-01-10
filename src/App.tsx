@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import { Routes, Route, useNavigate } from "react-router-dom";
 
-import reactLogo from './assets/printing.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import Navbar from './components/navbar';
 import Menu from './components/menu';
@@ -15,7 +13,6 @@ import ModalFinancial from './components/modalFinancial';
 import Maintenance from './pages/maintenance';
 
 function App() {
-  const [count, setCount] = useState(0);
   const [menu, setMenu] = useState<string>('home');
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
@@ -29,7 +26,7 @@ function App() {
       price: 10000000,
       vendor: "PT MBUI",
       quantity: 1,
-      image: "https://via.placeholder.com/50", // Replace with your image URL
+      image: "https://via.placeholder.com/50",
     },
     {
       id: 2,
@@ -37,7 +34,7 @@ function App() {
       price: 100000,
       vendor: "PT MBUI",
       quantity: 1,
-      image: "https://via.placeholder.com/50", // Replace with your image URL
+      image: "https://via.placeholder.com/50",
     },
   ]);
 
@@ -82,26 +79,6 @@ function App() {
         <Route path="/stationary-supply" element={<Maintenance />} />
         <Route path="/merchandise" element={<Maintenance />} />
       </Routes>
-      {/* <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p> */}
     </>
   )
 }

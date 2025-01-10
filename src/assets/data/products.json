@@ -32,27 +32,67 @@
     "vendor": "PT Intikom"
   },
   {
-    "id": 1,
-    "name": "Thinkpad Ryzen 5 Pro",
-    "category": "Laptop",
+    "id": 5,
+    "name": "Camera DSLR",
+    "category": "Device",
     "price": 10000000,
-    "image": "https://m.media-amazon.com/images/I/61DqntW26iL.jpg",
-    "vendor": "Asus"
+    "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEheR4g2Jfd-eHc4ln0MEE3LSiBX1emz7yshfl_RaoazVfLhO9fdeOa10_dHqLmJopUywTBHZszUGW0OA26G76v9bKfXNCKe_xHaQBlKhgxVIJjWqZ9nGK9tFxp7nYzy1nv5j5rh8AY7K3PL/s1600/camera-1132132_960_720.jpg",
+    "vendor": "PT MSBU"
   },
   {
-    "id": 2,
+    "id": 6,
+    "name": "Galaxy Tab S8",
+    "category": "Tablet",
+    "price": 15000000,
+    "image": "https://asset-a.grid.id/crop/0x0:0x0/x/photo/2021/08/21/samsung-galaxy-tab-s8-seriesjpg-20210821102219.jpg",
+    "vendor": "PT Intikom"
+  },
+  {
+    "id": 7,
+    "name": "Keyboard",
+    "category": "Device",
+    "price": 500000,
+    "image": "https://sukangulik.com/wp-content/uploads/2023/02/kekurangan-keyboard-mechanical.png",
+    "vendor": "PT MSBU"
+  },
+  {
+    "id": 8,
+    "name": "3D Printer",
+    "category": "Device",
+    "price": 100000000,
+    "image": "https://i.pcmag.com/imagery/roundups/06msR0ZNV3Oc2GfpqCu9AcT-14..v1632927607.jpg",
+    "vendor": "PT MSBU"
+  },
+  {
+    "id": 9,
     "name": "iPhone 14 Pro",
     "category": "Smartphone",
-    "price": 999,
+    "price": 12500000,
     "image": "https://images-cdn.ubuy.co.in/65a0ed4f4cd7c3373e1186a8-open-box-apple-iphone-14-pro-max-a2651.jpg",
     "vendor": "Apple"
   },
   {
-    "id": 3,
-    "name": "Galaxy Tab S8",
-    "category": "Tablet",
-    "price": 850,
-    "image": "https://asset-a.grid.id/crop/0x0:0x0/x/photo/2021/08/21/samsung-galaxy-tab-s8-seriesjpg-20210821102219.jpg",
+    "id": 10,
+    "name": "Wireless Mouse",
+    "category": "Smartphone",
+    "price": 250000,
+    "image": "https://res.cloudinary.com/pusatroxymas/image/upload/w_1024/v1656470300/prod_mproducts/luxuryacc:1108337/2022/54q_220629_BD4E1B39-4823-4D6A-814C-9BFA7D32F93B.jpeg.jpg",
+    "vendor": "Logitech"
+  },
+  {
+    "id": 11,
+    "name": "Samsung Galaxy Watch",
+    "category": "Smartphone",
+    "price": 3000000,
+    "image": "https://down-id.img.susercontent.com/file/id-11134207-7r98s-ly1p8a7pcwbw10",
     "vendor": "Samsung"
+  },
+  {
+    "id": 12,
+    "name": "Drone DJI Mini 3 Pro",
+    "category": "Device",
+    "price": 18000000,
+    "image": "https://ae01.alicdn.com/kf/S6943b776af734f41833408071022dd10q.jpg",
+    "vendor": "DJI"
   }
 ]

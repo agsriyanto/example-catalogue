@@ -1,13 +1,21 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Table, Button, Select, Tag, Input } from "antd";
 
 import "./request.scss";
 
+interface DataType {
+  key: string;
+  status: string;
+  poNumber: string;
+  itemName: string;
+  vendorName: string;
+  rejectionReason: string;
+}
+
 const Request = () => {
   const [statusFilter, setStatusFilter] = useState("");
 
-  // Sample data for the table
-  const data = [
+  const data: DataType[] = [
     {
       key: "1",
       status: "In Review",
@@ -34,13 +42,12 @@ const Request = () => {
     },
   ];
 
-  // Columns for the table
   const columns = [
     {
       title: "Action",
       dataIndex: "action",
       key: "action",
-      render: (_, record) => (
+      render: (_: any, record: DataType) => (
         <div className="action-buttons">
           <Button type="link" icon={<i className="fa fa-eye"></i>} />
           <Button type="link" icon={<i className="fa fa-trash"></i>} />

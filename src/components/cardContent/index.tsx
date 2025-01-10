@@ -1,7 +1,6 @@
 import { IconShoppingCart } from '@tabler/icons-react';
 
 import "./cardContent.scss";
-import iifLogo from '../../assets/iif-logo.svg';
 import formatNumber from '../../lib/utils';
 
 const CardContent = (props: any) => {

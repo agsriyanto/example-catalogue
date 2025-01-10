@@ -7,19 +7,27 @@ import CardContent from '../../components/cardContent';
 import Dropdown from "../../components/dropdown";
 import products from "../../assets/data/products.json";
 
+interface Product {
+  id: number;
+  name: string;
+  vendor: string;
+  price: number;
+  date: string;
+}
+
 const ItPeriperal = () => {
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [sortOption, setSortOption] = useState<string>('Low Price');
 
-  const handleSearchChange = (event) => {
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(event.target.value);
   };
 
-  const handleSortChange = (event) => {
+  const handleSortChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSortOption(event.target.value);
   };
 
-  const sortProducts = (products) => {
+  const sortProducts = (products: Product[]) => {
     switch (sortOption) {
       case 'Low Price':
         return products.sort((a, b) => a.price - b.price);
@@ -34,7 +42,7 @@ const ItPeriperal = () => {
     }
   };
 
-  const filteredProducts = products.filter((product) =>
+  const filteredProducts = products.filter((product: Product) =>
     product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
     product.vendor.toLowerCase().includes(searchQuery.toLowerCase())
   );
@@ -76,7 +84,7 @@ const ItPeriperal = () => {
       </div>
 
       <div className="container-card">
-        {sortedProducts.map((product, i) => (
+        {sortedProducts.map((product: Product, i: number) => (
           <CardContent key={i} data={product} className="card-content" />
         ))}
       </div>
