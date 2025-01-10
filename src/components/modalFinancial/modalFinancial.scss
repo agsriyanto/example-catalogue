@@ -1,0 +1,17 @@
+.modal-financial {
+
+  .ant-form-item-required {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: start;
+    ::after {
+      display: none;
+    }
+  }
+  .button-create {
+    color: #ffffff;
+    background-color: #F58220;
+    padding: 8px 16px;
+    border-radius: 8px;
+  }
+}

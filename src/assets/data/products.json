@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "name": "Thinkpad Ryzen 5 Pro",
+    "category": "Device",
+    "price": 10000000,
+    "image": "https://betet89.com/wp-content/uploads/2024/06/61CA008B-37CB-432E-B65E-199C92743654-356x356.png",
+    "vendor": "PT MSBU"
+  },
+  {
+    "id": 2,
+    "name": "Asus Charger",
+    "category": "Device",
+    "price": 100000,
+    "image": "https://lapgadgets.in/wp-content/uploads/2019/01/65w-5.5mm.jpg",
+    "vendor": "PT Intikom"
+  },
+  {
+    "id": 3,
+    "name": "Macbook Air 2024",
+    "category": "Device",
+    "price": 11000000,
+    "image": "https://i.rtings.com/assets/products/PJVl4IEm/apple-macbook-air-13-2024/design-medium.jpg?format=auto",
+    "vendor": "PT MSBU"
+  },
+  {
+    "id": 4,
+    "name": "Mac Charger",
+    "category": "Device",
+    "price": 8500000,
+    "image": "https://m.media-amazon.com/images/I/51B7D7VAxTL._AC_SL1500_.jpg",
+    "vendor": "PT Intikom"
+  },
+  {
+    "id": 1,
+    "name": "Thinkpad Ryzen 5 Pro",
+    "category": "Laptop",
+    "price": 10000000,
+    "image": "https://m.media-amazon.com/images/I/61DqntW26iL.jpg",
+    "vendor": "Asus"
+  },
+  {
+    "id": 2,
+    "name": "iPhone 14 Pro",
+    "category": "Smartphone",
+    "price": 999,
+    "image": "https://images-cdn.ubuy.co.in/65a0ed4f4cd7c3373e1186a8-open-box-apple-iphone-14-pro-max-a2651.jpg",
+    "vendor": "Apple"
+  },
+  {
+    "id": 3,
+    "name": "Galaxy Tab S8",
+    "category": "Tablet",
+    "price": 850,
+    "image": "https://asset-a.grid.id/crop/0x0:0x0/x/photo/2021/08/21/samsung-galaxy-tab-s8-seriesjpg-20210821102219.jpg",
+    "vendor": "Samsung"
+  }
+]

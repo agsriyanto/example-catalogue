@@ -1,6 +1,6 @@
 # Posts App with Next.js
 
-A simple Example Catalogue App built using **React.js ** with the **TypeScript**, **Sass**.
+A simple Example Catalogue App built using **React.js ** with the **TypeScript**, and **Sass**.
 
 ---
 

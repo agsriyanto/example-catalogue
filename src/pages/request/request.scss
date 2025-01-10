@@ -1,0 +1,43 @@
+.request-table-container {
+  padding: 20px;
+
+  h2 {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+
+  p {
+    color: gray;
+    margin-bottom: 16px;
+  }
+
+  .filters {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .action-buttons {
+    display: flex;
+    gap: 8px;
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+
+      &.ant-btn-primary {
+        background-color: #ffa500;
+        border-color: #ffa500;
+      }
+    }
+  }
+
+  .ant-table {
+    .ant-tag {
+      font-size: 14px;
+      text-transform: capitalize;
+    }
+  }
+}
