@@ -3,7 +3,20 @@ import { IconShoppingCart } from '@tabler/icons-react';
 import "./cardContent.scss";
 import formatNumber from '../../lib/utils';
 
-const CardContent = (props: any) => {
+interface Product {
+  id: number;
+  name: string;
+  vendor: string;
+  price: number;
+  date: string;
+}
+
+interface CardContentProps {
+  data: Product;
+  className?: string;
+}
+
+const CardContent = (props: CardContentProps) => {
   const { data } = props;
 
   return (
