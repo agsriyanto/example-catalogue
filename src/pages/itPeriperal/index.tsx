@@ -6,16 +6,7 @@ import './itPeriperal.scss';
 import CardContent from '../../components/cardContent';
 import Dropdown from "../../components/dropdown";
 import productsData from "../../assets/data/products.json";
-
-interface Product {
-  id: number;
-  name: string;
-  category: string;
-  price: number;
-  image: string;
-  vendor: string;
-  date?: string;
-}
+import { Product } from '../../types/product'
 
 const ItPeriperal = () => {
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -91,7 +82,7 @@ const ItPeriperal = () => {
 
       <div className="container-card">
         {sortedProducts.map((product: Product, i: number) => (
-          <CardContent key={i} data={product} className="card-content" />
+          <CardContent key={i} data={product as Product} className="card-content" />
         ))}
       </div>
     </div>

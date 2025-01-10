@@ -2,14 +2,7 @@ import { IconShoppingCart } from '@tabler/icons-react';
 
 import "./cardContent.scss";
 import formatNumber from '../../lib/utils';
-
-interface Product {
-  id: number;
-  name: string;
-  vendor: string;
-  price: number;
-  date: string;
-}
+import { Product } from '../../types/product';
 
 interface CardContentProps {
   data: Product;
