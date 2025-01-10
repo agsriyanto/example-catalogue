@@ -1,6 +1,6 @@
 import './menu.scss';
 
-const Menu = (props: { handleChange: (string) => void, menu: string }) => {
+const Menu = (props: { handleChange: (menu: string) => void, menu: string }) => {
   const { handleChange, menu } = props;
 
   return (

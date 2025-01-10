@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { Modal, Form, Input, Select, DatePicker, Button } from "antd";
 
 const { Option } = Select;
@@ -6,10 +5,6 @@ import "./modalFinancial.scss";
 
 const ModalFinancial = (props: any) => {
   const { isModalVisible, setIsModalVisible } = props;
-
-  const showModal = () => {
-    setIsModalVisible(true);
-  };
 
   const handleOk = () => {
     setIsModalVisible(false);
@@ -27,11 +22,11 @@ const ModalFinancial = (props: any) => {
         open={isModalVisible}
         onOk={handleOk}
         onCancel={handleCancel}
-        footer={null} // Customize footer to use your own button
       >
         <Form
           layout="vertical"
-          onFinish={(values) => {
+          onFinish={() => {
+            handleOk();
           }}
         >
           <Form.Item

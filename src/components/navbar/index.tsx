@@ -4,7 +4,6 @@ import { Badge } from 'antd';
 
 import './navbar.scss';
 import iifLogo from '../../assets/iif-logo.svg';
-import Sidebar from '../sidebar';
 
 const Navbar = (props: any) => {
   const { isOpen, setIsOpen } = props;
