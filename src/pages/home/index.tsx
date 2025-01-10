@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import './home.scss' ;
@@ -8,12 +7,6 @@ import pantryLogo from '../../assets/pantry.svg';
 import merchandiseLogo from '../../assets/merchandise.svg';
 
 const Home = () => {
-  const [content, setContent] = useState<string>('');
-
-  const handleContent = (content: string) => {
-    setContent(content);
-  };
-
   return (
     <div className="home">
       <div className="home-title">

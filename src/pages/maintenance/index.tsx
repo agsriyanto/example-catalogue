@@ -1,7 +1,7 @@
 const Maintenance = () => {
   return (
     <div>
-      <h1>Maintenance</h1>
+      <h1>Under Maintenance</h1>
     </div>
   )
 };

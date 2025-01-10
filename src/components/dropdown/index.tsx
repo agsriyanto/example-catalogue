@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import { IconChevronDown } from '@tabler/icons-react'
 
 import "./dropdown.scss";
@@ -14,7 +14,7 @@ const Dropdown = (props: any) => {
     setVisible(!visible);
   };
 
-  const handleOptionClick = (option) => {
+  const handleOptionClick = (option: any) => {
     setTempSelected(option);
   };
 
@@ -23,7 +23,7 @@ const Dropdown = (props: any) => {
     setVisible(false);
   };
 
-  const handleClickOutside = (event) => {
+  const handleClickOutside = (event: any) => {
     if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
       setVisible(false);
     }
