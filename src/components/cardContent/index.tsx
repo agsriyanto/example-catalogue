@@ -7,6 +7,7 @@ import { Product } from '../../types/product';
 interface CardContentProps {
   data: Product;
   className?: string;
+  addToCart: (product: Product) => void;
 }
 
 const CardContent = (props: CardContentProps) => {

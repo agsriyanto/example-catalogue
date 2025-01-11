@@ -12,6 +12,7 @@ import Sidebar from './components/sidebar';
 import ModalFinancial from './components/modalFinancial';
 import Maintenance from './pages/maintenance';
 import cartsData from "./assets/data/cart.json";
+import { Product } from './types/product';
 
 interface CartItem {
   id: number;
