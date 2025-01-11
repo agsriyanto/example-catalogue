@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "Thinkpad Ryzen 5 Pro",
+    "price": 10000000,
+    "image": "https://betet89.com/wp-content/uploads/2024/06/61CA008B-37CB-432E-B65E-199C92743654-356x356.png",
+    "vendor": "PT MSBU",
+    "quantity": 2
+  },
+  {
+    "id": 2,
+    "name": "Asus Charger",
+    "price": 100000,
+    "image": "https://lapgadgets.in/wp-content/uploads/2019/01/65w-5.5mm.jpg",
+    "vendor": "PT Intikom",
+    "quantity": 1
+  }
+]

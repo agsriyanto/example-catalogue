@@ -6,7 +6,7 @@ import './navbar.scss';
 import iifLogo from '../../assets/iif-logo.svg';
 
 const Navbar = (props: any) => {
-  const { isOpen, setIsOpen } = props;
+  const { isOpen, setIsOpen, totalQuantity } = props;
 
   return (
     <div className="navbar">
@@ -19,7 +19,7 @@ const Navbar = (props: any) => {
           </div>
         </Link>
         <div className="navbar-title-user">
-          <Badge count={2} className="badge" size="small">
+          <Badge count={totalQuantity} className="badge" size="small">
             <IconShoppingCart size={20} stroke="1" onClick={() => setIsOpen(!isOpen)} className="icon-shop" />
           </Badge>
           <div className="card-user">

@@ -11,6 +11,17 @@ import ItPeriperal from './pages/itPeriperal';
 import Sidebar from './components/sidebar';
 import ModalFinancial from './components/modalFinancial';
 import Maintenance from './pages/maintenance';
+import cartsData from "./assets/data/cart.json";
+import { Product } from './types/product';
+
+interface CartItem {
+  id: number;
+  name: string;
+  price: number;
+  image: string;
+  vendor: string;
+  quantity: number;
+}
 
 function App() {
   const [menu, setMenu] = useState<string>('home');
@@ -19,24 +30,7 @@ function App() {
 
   const navigate = useNavigate();
 
-  const [cartItems, setCartItems] = useState([
-    {
-      id: 1,
-      name: "Thinkpad Ryzen 5 Pro",
-      price: 10000000,
-      vendor: "PT MBUI",
-      quantity: 1,
-      image: "https://via.placeholder.com/50",
-    },
-    {
-      id: 2,
-      name: "Asus Charger",
-      price: 100000,
-      vendor: "PT MBUI",
-      quantity: 1,
-      image: "https://via.placeholder.com/50",
-    },
-  ]);
+  const [cartItems, setCartItems] = useState(cartsData as CartItem[]);
 
   const renderMenu = () => {
     switch (menu) {
@@ -56,6 +50,27 @@ function App() {
     navigate("/");
   };
 
+  const addToCart = (product: Product) => {
+    setCartItems((prevCart) => {
+      const existingItem = prevCart.find((item) => item.id === product.id);
+      if (existingItem) {
+        return prevCart.map((item) =>
+          item.id === product.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        );
+      } else {
+        return [...prevCart, { ...product, quantity: 1 }];
+      }
+    });
+  };
+
+  const getTotalQuantity = (cartItems: CartItem[]): number => {
+    return cartItems.reduce((total, item) => total + item.quantity, 0);
+  };
+  
+  const totalQuantity = getTotalQuantity(cartItems);
+
   const props = {
     isOpen,
     setIsOpen,
@@ -63,6 +78,8 @@ function App() {
     setCartItems,
     isModalVisible,
     setIsModalVisible,
+    totalQuantity,
+    addToCart,
   };
 
   return (
@@ -74,7 +91,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={renderMenu()} />
-        <Route path="/it-periperal" element={<ItPeriperal />} />
+        <Route path="/it-periperal" element={<ItPeriperal {...props} />} />
         <Route path="/printing" element={<Maintenance />} />
         <Route path="/stationary-supply" element={<Maintenance />} />
         <Route path="/merchandise" element={<Maintenance />} />

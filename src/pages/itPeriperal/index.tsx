@@ -8,14 +8,19 @@ import Dropdown from "../../components/dropdown";
 import productsData from "../../assets/data/products.json";
 import { Product } from '../../types/product'
 
-const ItPeriperal = () => {
+const ItPeriperal = (props: any) => {
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [sortOption, setSortOption] = useState<string>('Low Price');
+  const [selectedCategory, setSelectedCategory] = useState<string>('All');
 
   const products: Product[] = productsData as Product[];
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(event.target.value);
+  };
+
+  const handleCategory = (category: string) => {
+    setSelectedCategory(category);
   };
 
   const sortProducts = (products: Product[]) => {
@@ -42,6 +47,9 @@ const ItPeriperal = () => {
   const filteredProducts = products.filter((product: Product) =>
     product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
     product.vendor.toLowerCase().includes(searchQuery.toLowerCase())
+  )
+  .filter((product: Product) =>
+    selectedCategory === 'All' || product.category === selectedCategory
   );
 
   const sortedProducts = sortProducts(filteredProducts);
@@ -57,11 +65,15 @@ const ItPeriperal = () => {
         <p className="title-category">Sub Category :</p>
         <div className="itPeriperal-content-card">
           <div className="category">
-            <div className="category-item">All</div>
-            <div className="category-item">Device</div>
-            <div className="category-item">Smartphone</div>
-            <div className="category-item">Sub Category</div>
-            <div className="category-item">Sub Category</div>
+            {['All', 'Device', 'Smartphone', 'Sub Category 1', 'Sub Category 2'].map((category) => (
+              <div
+                key={category}
+                className={`category-item ${selectedCategory === category ? 'active' : ''}`}
+                onClick={() => handleCategory(category)}
+              >
+                {category}
+              </div>
+            ))}
           </div>
           <div className="sorting">
             <p>Sort by</p>
@@ -82,7 +94,7 @@ const ItPeriperal = () => {
 
       <div className="container-card">
         {sortedProducts.map((product: Product, i: number) => (
-          <CardContent key={i} data={product as Product} className="card-content" />
+          <CardContent {...props} key={i} data={product as Product} className="card-content" />
         ))}
       </div>
     </div>
