@@ -24,20 +24,18 @@ const Sidebar = (props: SidebarProps) => {
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
-    if (!isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
+    document.body.style.overflow = isOpen ? "auto" : "hidden";
   };
 
   const handleQuantityChange = (id: number, change: number) => {
     setCartItems((prevItems: CartItem[]) =>
-      prevItems.map((item: CartItem) =>
-        item.id === id
-          ? { ...item, quantity: Math.max(item.quantity + change, 1) }
-          : item
-      )
+      prevItems
+        .map((item: CartItem) =>
+          item.id === id
+            ? { ...item, quantity: item.quantity + change }
+            : item
+        )
+        .filter((item) => item.quantity > 0)
     );
   };
 
@@ -87,7 +85,6 @@ const Sidebar = (props: SidebarProps) => {
                       <div className="item-quantity">
                         <button
                           onClick={() => handleQuantityChange(item.id, -1)}
-                          disabled={item.quantity === 1}
                         >
                           -
                         </button>
