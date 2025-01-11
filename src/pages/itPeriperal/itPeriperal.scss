@@ -48,8 +48,15 @@
         &-item {
           padding: 4px 12px;
           border: 1px solid #617170;
-          border-radius: 8px;
+          border-radius: 12px;
           cursor: pointer;
+          padding: 4px 10px;
+          border-radius: 4px;
+
+          &.active {
+            color: #F58220;
+            border: 1px solid #F58220;
+          }
 
           @media (max-width: 768px) {
             padding: 6px 14px;

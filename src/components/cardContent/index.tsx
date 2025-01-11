@@ -10,7 +10,7 @@ interface CardContentProps {
 }
 
 const CardContent = (props: CardContentProps) => {
-  const { data } = props;
+  const { data, addToCart } = props;
 
   return (
     <div className="card-content" >
@@ -21,7 +21,7 @@ const CardContent = (props: CardContentProps) => {
           <p className="price">IDR {formatNumber(data?.price ?? 0)}</p>
         </div>
         <div className="card-content-title-icon">
-          <IconShoppingCart size={20} color="#F58220" stroke="1" />
+          <IconShoppingCart size={20} color="#F58220" stroke="1" onClick={() => addToCart(data)} />
         </div>
       </div>
       <div className="card-content-image">
